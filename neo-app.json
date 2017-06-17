@@ -5,19 +5,28 @@
       "path": "/sap/opu/odata",
       "target": {
         "type": "destination",
-        "name": "n74odata",
+        "name": "NPL",
         "entryPath": "/sap/opu/odata"
       },
-      "description": "n74odata"
+      "description": "NPL"
     },
     {
       "path": "/sap/bc/lrep",
       "target": {
         "type": "destination",
-        "name": "n74odata",
+        "name": "NPL",
         "entryPath": "/sap/bc/lrep"
       },
-      "description": "n74odata"
+      "description": "NPL"
+    },
+    {
+      "path": "/sap/public/bc/NWDEMO_MODEL",
+      "target": {
+        "type": "destination",
+        "name": "NPL",
+        "entryPath": "/sap/public/bc/NWDEMO_MODEL"
+      },
+      "description": "NPL"
     },
     {
       "path": "/resources",
