@@ -1,5 +1,5 @@
-# Demo for SAPUI5 Smart Templates 
-Demonstrate SAP Smart Templates (formerly known as: Fiori Elements) without annotaded CDS View based OData Service on NetWeaver ABAP 7.40.
+# Demo for SAP Fiori Elements
+Demonstrate SAP Fiori Elements (formerly known as: Smart Templates) without annotaded CDS View based OData Service on NetWeaver ABAP 7.40.
 
 To make this example work the SAP delivered standard OData Service /IWBEP/EPM_DEVELOPER_SCENARIO must be redefined as ZEPM_DEVELOPER_SCENARIO and the products_get_entity method must be implemented with the following code:
 
