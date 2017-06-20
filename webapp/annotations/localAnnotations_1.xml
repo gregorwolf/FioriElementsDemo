@@ -1,52 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx
-    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
-	Version="4.0">
-    <edmx:Reference
-		Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/UI.xml">
-        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1" />
-    </edmx:Reference>
-    <edmx:Reference
-		Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
-        <edmx:Include Alias="CQP" Namespace="Org.OData.Measures.V1" />
-    </edmx:Reference>
-    <edmx:Reference
-		Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/Common.xml">
-        <edmx:Include Alias="COMMON" Namespace="com.sap.vocabularies.Common.v1" />
-    </edmx:Reference>
-    <edmx:Reference
-		Uri="/sap/opu/odata/sap/ZEPM_DEVELOPER_SCENARIO_SRV/$metadata">
-        <edmx:Include Alias="EPM" Namespace="ZEPM_DEVELOPER_SCENARIO_SRV" />
-    </edmx:Reference>
-    <edmx:DataServices>
-        <Schema
-            xmlns="http://docs.oasis-open.org/odata/ns/edm">
-            <Annotations
-                xmlns="http://docs.oasis-open.org/odata/ns/edm"
-				Target="EPM.Product">
-                <Annotation Term="COMMON.SemanticKey">
-                    <Collection>
-                        <PropertyPath>ProductId</PropertyPath>
-                    </Collection>
-                </Annotation>
-            </Annotations>
-            <Annotations Target="EPM.Product/Price">
-                <Annotation Term="CQP.ISOCurrency" Path="CurrencyCode" />
-            </Annotations>
-            <Annotations Target="EPM.Product/DimensionWidth">
-                <Annotation Term="CQP.Unit" Path="DimensionUnit" />
-            </Annotations>
-            <Annotations Target="EPM.Product/DimensionHeight">
-                <Annotation Term="CQP.Unit" Path="DimensionUnit" />
-            </Annotations>
-            <Annotations Target="EPM.Product/DimensionDepth">
-                <Annotation Term="CQP.Unit" Path="DimensionUnit" />
-            </Annotations>
-            <Annotations Target="EPM.Product/Weight">
-                <Annotation Term="CQP.Unit" Path="WeightUnit" />
-            </Annotations>
-            <Annotations Target="EPM.Product">
-            	<Annotation Term="UI.SelectionFields">
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/UI.xml">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+		<edmx:Include Alias="CQP" Namespace="Org.OData.Measures.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/Common.xml">
+		<edmx:Include Alias="COMMON" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZEPM_DEVELOPER_SCENARIO_SRV/$metadata">
+		<edmx:Include Alias="EPM" Namespace="ZEPM_DEVELOPER_SCENARIO_SRV"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="EPM.Product">
+				<Annotation Term="COMMON.SemanticKey">
+					<Collection>
+						<PropertyPath>ProductId</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="EPM.Product/Price">
+				<Annotation Term="CQP.ISOCurrency" Path="CurrencyCode"/>
+			</Annotations>
+			<Annotations Target="EPM.Product/DimensionWidth">
+				<Annotation Term="CQP.Unit" Path="DimensionUnit"/>
+			</Annotations>
+			<Annotations Target="EPM.Product/DimensionHeight">
+				<Annotation Term="CQP.Unit" Path="DimensionUnit"/>
+			</Annotations>
+			<Annotations Target="EPM.Product/DimensionDepth">
+				<Annotation Term="CQP.Unit" Path="DimensionUnit"/>
+			</Annotations>
+			<Annotations Target="EPM.Product/Weight">
+				<Annotation Term="CQP.Unit" Path="WeightUnit"/>
+			</Annotations>
+			<Annotations Target="EPM.Product">
+				<Annotation Term="UI.SelectionFields">
 					<Collection>
 						<PropertyPath>ProductId</PropertyPath>
 						<PropertyPath>Name</PropertyPath>
@@ -54,132 +45,132 @@
 						<PropertyPath>ShortDescription</PropertyPath>
 					</Collection>
 				</Annotation>
-                <Annotation Term="UI.HeaderInfo">
-                    <Record>
-                        <PropertyValue Property="TypeName" String="Product" />
-                        <PropertyValue Property="TypeNamePlural" String="Products" />
-                        <PropertyValue Property="Title">
-                            <Record>
-                                <PropertyValue Property="Value">
-                                    <Apply Function="odata.concat">
-                                        <Path>Name</Path>
-                                        <String> (</String>
-                                        <Path>ProductId</Path>
-                                        <String>)</String>
-                                    </Apply>
-                                </PropertyValue>
-                            </Record>
-                        </PropertyValue>
-                        <PropertyValue Property="ImageUrl" Path="PictureUrl" />
-                        <PropertyValue Property="Description">
-                            <Record Type="UI.DataFieldWithNavigation">
-                                <PropertyValue Property="Value" Path="SupplierName" />
-                                <PropertyValue Property="Target" Path="SupplierName" />
-                            </Record>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record>
+						<PropertyValue Property="TypeName" String="Product"/>
+						<PropertyValue Property="TypeNamePlural" String="Products"/>
+						<PropertyValue Property="Title">
+							<Record>
+								<PropertyValue Property="Value">
+									<Apply Function="odata.concat">
+										<Path>Name</Path>
+										<String> (</String>
+										<Path>ProductId</Path>
+										<String>)</String>
+									</Apply>
+								</PropertyValue>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="ImageUrl" Path="PictureUrl"/>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataFieldWithNavigation">
+								<PropertyValue Property="Value" Path="SupplierName"/>
+								<PropertyValue Property="Target" Path="SupplierName"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
 				<Annotation Term="UI.Facets">
 					<Collection>
 						<Record Type="UI.CollectionFacet">
 							<PropertyValue Property="ID" String="GeneralInformation"/>
-							<PropertyValue Property="Label" String="{@i18n>@GeneralInfoFacetLabel}"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
 							<PropertyValue Property="Facets">
 								<Collection>
 									<Record Type="UI.ReferenceFacet">
-										<PropertyValue Property="Label" String="{@i18n>@GeneralInfoFacetLabel}"/>
+										<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
 										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
 									</Record>
-	                                <Record Type="UI.ReferenceFacet">
-	                                    <PropertyValue Property="Label" String="Dimension" />
-	                                    <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Dimension" />
-	                                </Record>
-	                                <Record Type="UI.ReferenceFacet">
-	                                    <PropertyValue Property="Label" String="Weight" />
-	                                    <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Weight" />
-	                                </Record>
-                                </Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="Dimension"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Dimension"/>
+									</Record>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="Weight"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Weight"/>
+									</Record>
+								</Collection>
 							</PropertyValue>
 						</Record>
 					</Collection>
 				</Annotation>
-                <Annotation Term="UI.DataPoint">
-                    <Record Type="UI.DataPointType">
-                        <PropertyValue Property="Title" String="Price" />
-                        <PropertyValue Property="Value" Path="Price" />
-                    </Record>
-                </Annotation>
-                <Annotation Term="UI.Identification">
-                    <Collection>
-                        <Record Type="UI.DataField">
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
-                            <PropertyValue Property="Value" Path="ProductId" />
-                            <PropertyValue Property="Label" String="Product ID" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
-                            <PropertyValue Property="Value" Path="Category" />
-                            <PropertyValue Property="Label" String="Category" />
-                        </Record>
-                    </Collection>
-                </Annotation>
-                <Annotation Term="UI.LineItem">
-                    <Collection>
-                        <Record Type="UI.DataField">
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
-                            <PropertyValue Property="Value" Path="ProductId" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
-                            <PropertyValue Property="Value" Path="Name" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium" />
-                            <PropertyValue Property="Value" Path="Category" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium" />
-                            <PropertyValue Property="Value" Path="SupplierName" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium" />
-                            <PropertyValue Property="Value" Path="Price" />
-                        </Record>
-                    </Collection>
-                </Annotation>
-                <Annotation Term="UI.FieldGroup" Qualifier="Dimension">
-                    <Record>
-                        <PropertyValue Property="Data">
-                            <Collection>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="Product Width" />
-                                    <PropertyValue Property="Value" Path="DimensionWidth" />
-                                </Record>
-                                <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                                    <PropertyValue Property="Label" String="Product Height" />
-                                    <PropertyValue Property="Value" Path="DimensionHeight" />
-                                </Record>
-                                <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                                    <PropertyValue Property="Label" String="Product Depth" />
-                                    <PropertyValue Property="Value" Path="DimensionDepth" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="UI.FieldGroup" Qualifier="Weight">
-                    <Record>
-                        <PropertyValue Property="Data">
-                            <Collection>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="Product Weight" />
-                                    <PropertyValue Property="Value" Path="Weight" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-            </Annotations>
-        </Schema>
-    </edmx:DataServices>
+				<Annotation Term="UI.DataPoint">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Title" String="Price"/>
+						<PropertyValue Property="Value" Path="Price"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField">
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+							<PropertyValue Property="Value" Path="ProductId"/>
+							<PropertyValue Property="Label" String="Product ID"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+							<PropertyValue Property="Value" Path="Category"/>
+							<PropertyValue Property="Label" String="Category"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+							<PropertyValue Property="Value" Path="ProductId"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+							<PropertyValue Property="Value" Path="Name"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+							<PropertyValue Property="Value" Path="Category"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+							<PropertyValue Property="Value" Path="SupplierName"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+							<PropertyValue Property="Value" Path="Price"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="Dimension">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Label" String="Product Width"/>
+									<PropertyValue Property="Value" Path="DimensionWidth"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.UI.v1.DataField">
+									<PropertyValue Property="Label" String="Product Height"/>
+									<PropertyValue Property="Value" Path="DimensionHeight"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.UI.v1.DataField">
+									<PropertyValue Property="Label" String="Product Depth"/>
+									<PropertyValue Property="Value" Path="DimensionDepth"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="Weight">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Label" String="Product Weight"/>
+									<PropertyValue Property="Value" Path="Weight"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
 </edmx:Edmx>
