@@ -18,10 +18,7 @@
 				"uri": "/sap/opu/odata/sap/ZEPM_DEVELOPER_SCENARIO_SRV/",
 				"type": "OData",
 				"settings": {
-					"annotations": [
-						"localAnnotations_1",
-						"localAnnotations"
-					],
+					"annotations": ["localAnnotations_1", "localAnnotations"],
 					"localUri": "localService/metadata.xml"
 				}
 			},
@@ -44,13 +41,33 @@
 		"sourceTemplate": {
 			"id": "ui5template.smarttemplate",
 			"version": "1.0.0"
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"intent1": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "EPMProduct",
+					"action": "list",
+					"title": "Products",
+					"icon": "sap-icon://product",
+					"indicatorDataSource": {
+						"dataSource": "mainService",
+						"refresh": 3600,
+						"path": "/sap/opu/odata/sap/ZEPM_DEVELOPER_SCENARIO_SRV/Products/$count"
+					},
+					"subTitle": "EPM"
+				}
+			}
 		}
 	},
 	"sap.ui": {
 		"_version": "1.2.0",
 		"technology": "UI5",
 		"icons": {
-			"icon": "",
+			"icon": "sap-icon://product",
 			"favIcon": "",
 			"phone": "",
 			"phone@2": "",
@@ -62,10 +79,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_bluecrystal"
-		]
+		"supportedThemes": ["sap_hcb", "sap_bluecrystal"]
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
@@ -74,7 +88,7 @@
 			"css": []
 		},
 		"dependencies": {
-			"minUI5Version": "1.32.1",
+			"minUI5Version": "1.52.4",
 			"libs": {
 				"sap.ui.core": {},
 				"sap.m": {},
@@ -120,44 +134,40 @@
 	},
 	"sap.ui.generic.app": {
 		"_version": "1.1.0",
-		"pages": [
-			{
-				"entitySet": "Products",
-				"component": {
-					"name": "sap.suite.ui.generic.template.ListReport",
-					"list": true,
-					"settings": {
-						"quickVariantSelectionX": {
-							"variants": {
-								"0": {
-									"key": "_tab0",
-									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#All"
-								},
-								"1": {
-									"key": "_tab1",
-									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Notebooks"
-								},
-								"2": {
-									"key": "_tab2",
-									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Mice"
-								}
+		"pages": [{
+			"entitySet": "Products",
+			"component": {
+				"name": "sap.suite.ui.generic.template.ListReport",
+				"list": true,
+				"settings": {
+					"quickVariantSelectionX": {
+						"variants": {
+							"0": {
+								"key": "_tab0",
+								"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#All"
+							},
+							"1": {
+								"key": "_tab1",
+								"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Notebooks"
+							},
+							"2": {
+								"key": "_tab2",
+								"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Mice"
 							}
 						}
 					}
-				},
-				"pages": [
-					{
-						"entitySet": "Products",
-						"component": {
-							"name": "sap.suite.ui.generic.template.ObjectPage"
-						}
-					}
-				]
-			}
-		]
+				}
+			},
+			"pages": [{
+				"entitySet": "Products",
+				"component": {
+					"name": "sap.suite.ui.generic.template.ObjectPage"
+				}
+			}]
+		}]
 	},
 	"sap.platform.hcp": {
 		"_version": "1.2.0",
-		"uri": ""
+		"uri": "webapp"
 	}
 }
