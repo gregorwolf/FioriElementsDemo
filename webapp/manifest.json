@@ -125,7 +125,21 @@
 				"entitySet": "Products",
 				"component": {
 					"name": "sap.suite.ui.generic.template.ListReport",
-					"list": true
+					"list": true,
+					"settings": {
+						"quickVariantSelectionX": {
+							"variants": {
+								"0": {
+									"key": "_tab1",
+									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Notebooks"
+								},
+								"1": {
+									"key": "_tab2",
+									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Mice"
+								}
+							}
+						}
+					}
 				},
 				"pages": [
 					{
