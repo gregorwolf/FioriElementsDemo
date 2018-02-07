@@ -47,6 +47,17 @@
 						<PropertyPath>ProductId</PropertyPath>
 					</Collection>
 				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="All">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Parameters">
+							<Annotation Term="COMMON.Label" String="{@i18n&gt;@All}"/>
+						</PropertyValue>
+						<PropertyValue Property="SelectOptions">
+							<Collection></Collection>
+						</PropertyValue>
+						<PropertyValue Property="Text" String="{@i18n&gt;@All}"/>
+					</Record>
+				</Annotation>
 				<Annotation Term="UI.SelectionVariant" Qualifier="Notebooks">
 					<Record Type="UI.SelectionVariantType">
 						<PropertyValue Property="Parameters">
@@ -68,6 +79,7 @@
 								</Record>
 							</Collection>
 						</PropertyValue>
+						<PropertyValue Property="Text" String="{@i18n&gt;@Notebooks}"/>
 					</Record>
 				</Annotation>
 				<Annotation Term="UI.SelectionVariant" Qualifier="Mice">
@@ -91,6 +103,7 @@
 								</Record>
 							</Collection>
 						</PropertyValue>
+						<PropertyValue Property="Text" String="{@i18n&gt;@Mice}"/>
 					</Record>
 				</Annotation>
 				<Annotation Term="UI.SelectionFields">

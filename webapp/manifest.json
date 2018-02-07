@@ -130,10 +130,14 @@
 						"quickVariantSelectionX": {
 							"variants": {
 								"0": {
+									"key": "_tab0",
+									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#All"
+								},
+								"1": {
 									"key": "_tab1",
 									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Notebooks"
 								},
-								"1": {
+								"2": {
 									"key": "_tab2",
 									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Mice"
 								}
