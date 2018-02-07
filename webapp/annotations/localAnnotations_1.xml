@@ -49,6 +49,29 @@
 				<Annotation Term="CQP.Unit" Path="WeightUnit"/>
 			</Annotations>
 			<Annotations Target="EPM.Product">
+				<Annotation Term="UI.SelectionVariant">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Parameters">
+							<Annotation Term="COMMON.Label" String="{@i18n&gt;@Notebooks}"/>
+						</PropertyValue>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType">
+									<PropertyValue Property="PropertyName" PropertyPath="Category"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType">
+												<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+												<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/>
+												<PropertyValue Property="Low"/>
+											</Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
 				<Annotation Term="UI.SelectionFields">
 					<Collection>
 						<PropertyPath>ProductId</PropertyPath>
