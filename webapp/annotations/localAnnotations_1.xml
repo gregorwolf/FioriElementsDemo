@@ -26,13 +26,6 @@
 	</edmx:Reference>
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
-			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="EPM.Product">
-				<Annotation Term="COMMON.SemanticKey">
-					<Collection>
-						<PropertyPath>ProductId</PropertyPath>
-					</Collection>
-				</Annotation>
-			</Annotations>
 			<Annotations Target="EPM.Product/Price">
 				<Annotation Term="CQP.ISOCurrency" Path="CurrencyCode"/>
 			</Annotations>
@@ -49,6 +42,11 @@
 				<Annotation Term="CQP.Unit" Path="WeightUnit"/>
 			</Annotations>
 			<Annotations Target="EPM.Product">
+				<Annotation Term="COMMON.SemanticKey">
+					<Collection>
+						<PropertyPath>ProductId</PropertyPath>
+					</Collection>
+				</Annotation>
 				<Annotation Term="UI.SelectionVariant">
 					<Record Type="UI.SelectionVariantType">
 						<PropertyValue Property="Parameters">
@@ -63,7 +61,7 @@
 											<Record Type="UI.SelectionRangeType">
 												<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
 												<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/>
-												<PropertyValue Property="Low"/>
+												<PropertyValue Property="Low" String="Notebook"/>
 											</Record>
 										</Collection>
 									</PropertyValue>
